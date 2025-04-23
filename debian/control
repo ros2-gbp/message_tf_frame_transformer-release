@@ -1,0 +1,12 @@
+Source: ros-kilted-message-tf-frame-transformer
+Section: misc
+Priority: optional
+Maintainer: Lennart Reiher <lennart.reiher@rwth-aachen.de>
+Build-Depends: debhelper (>= 9.0.0), ros-kilted-ament-cmake, ros-kilted-geometry-msgs, ros-kilted-rclcpp, ros-kilted-ros-environment, ros-kilted-sensor-msgs, ros-kilted-tf2, ros-kilted-tf2-geometry-msgs, ros-kilted-tf2-ros, ros-kilted-tf2-sensor-msgs, ros-kilted-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kilted-message-tf-frame-transformer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kilted-geometry-msgs, ros-kilted-rclcpp, ros-kilted-ros-environment, ros-kilted-sensor-msgs, ros-kilted-tf2, ros-kilted-tf2-geometry-msgs, ros-kilted-tf2-ros, ros-kilted-tf2-sensor-msgs, ros-kilted-ros-workspace
+Description: Transforms messages of arbitrary type to a different frame using tf2::doTransform
