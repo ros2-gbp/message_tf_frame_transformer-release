@@ -1,28 +1,63 @@
 name: docker-ros
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
 
-  ros:
+  ros2-humble:
     runs-on: ubuntu-latest
     steps:
-      - uses: ika-rwth-aachen/docker-ros@v1.0.0
+      - uses: ika-rwth-aachen/docker-ros@main
         with:
-          image-tag: ros
-          base-image: rwthika/ros:latest
-          command: rosrun message_tf_frame_transformer message_tf_frame_transformer
-          platform: amd64,arm64
+          platform: amd64
           target: run
-  
-  ros2:
+          image-tag: ros2-humble
+          base-image: rwthika/ros2:humble
+          command: ros2 launch message_tf_frame_transformer message_tf_frame_transformer.launch.xml
+          enable-recursive-vcs-import: 'false'
+
+  ros2-jazzy:
     runs-on: ubuntu-latest
     steps:
-      - uses: ika-rwth-aachen/docker-ros@v1.0.0
+      - uses: ika-rwth-aachen/docker-ros@main
         with:
-          image-tag: ros2
-          base-image: rwthika/ros2:latest
-          command: ros2 run message_tf_frame_transformer message_tf_frame_transformer
-          platform: amd64,arm64
+          platform: amd64
           target: run
+          image-tag: ros2-jazzy
           enable-push-as-latest: 'true'
+          base-image: rwthika/ros2:jazzy
+          rmw-implementation: rmw_zenoh_cpp
+          command: ros2 launch message_tf_frame_transformer message_tf_frame_transformer.launch.xml
+          enable-recursive-vcs-import: 'false'
+
+  ros2-kilted:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ika-rwth-aachen/docker-ros@main
+        with:
+          platform: amd64
+          target: run
+          image-tag: ros2-kilted
+          base-image: rwthika/ros2:kilted
+          rmw-implementation: rmw_zenoh_cpp
+          command: ros2 launch message_tf_frame_transformer message_tf_frame_transformer.launch.xml
+          enable-recursive-vcs-import: 'false'
+
+  ros2-rolling:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ika-rwth-aachen/docker-ros@main
+        with:
+          platform: amd64
+          target: run
+          image-tag: ros2-rolling
+          base-image: rwthika/ros2:rolling
+          rmw-implementation: rmw_zenoh_cpp
+          command: ros2 launch message_tf_frame_transformer message_tf_frame_transformer.launch.xml
+          enable-recursive-vcs-import: 'false'
