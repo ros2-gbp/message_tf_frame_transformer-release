@@ -5,27 +5,45 @@ message types by including this file.
 
 Example:
 
-#define MESSAGE_TYPE(TYPE)                                                     \
-  std::cout << "The ROS message type " << #TYPE << " is supported. ";          \
+#define MESSAGE_TYPE(TYPE, NAME) \
+  std::cout << "The ROS message type " << #TYPE << " is supported. "; \
   std::cout << std::endl;
 #include "message_tf_frame_transformer/message_types.macro"
 #undef MESSAGE_TYPE
 
 ============================================================================= */
 
-MESSAGE_TYPE(geometry_msgs::Point)
-MESSAGE_TYPE(geometry_msgs::PointStamped)
-MESSAGE_TYPE(geometry_msgs::Pose)
-MESSAGE_TYPE(geometry_msgs::PoseStamped)
-MESSAGE_TYPE(geometry_msgs::PoseWithCovariance)
-MESSAGE_TYPE(geometry_msgs::PoseWithCovarianceStamped)
-MESSAGE_TYPE(geometry_msgs::Quaternion)
-MESSAGE_TYPE(geometry_msgs::QuaternionStamped)
-MESSAGE_TYPE(geometry_msgs::Transform)
-MESSAGE_TYPE(geometry_msgs::TransformStamped)
-MESSAGE_TYPE(geometry_msgs::Vector3)
-MESSAGE_TYPE(geometry_msgs::Vector3Stamped)
-MESSAGE_TYPE(geometry_msgs::Wrench)
-MESSAGE_TYPE(geometry_msgs::WrenchStamped)
+// MESSAGE_TYPE(geometry_msgs::msg::Accel, geometry_msgs/msg/Accel)
+// MESSAGE_TYPE(geometry_msgs::msg::AccelStamped, geometry_msgs/msg/AccelStamped)
+// MESSAGE_TYPE(geometry_msgs::msg::AccelWithCovariance, geometry_msgs/msg/AccelWithCovariance)
+// MESSAGE_TYPE(geometry_msgs::msg::AccelWithCovarianceStamped, geometry_msgs/msg/AccelWithCovarianceStamped)
+// MESSAGE_TYPE(geometry_msgs::msg::Inertia, geometry_msgs/msg/Inertia)
+// MESSAGE_TYPE(geometry_msgs::msg::InertiaStamped, geometry_msgs/msg/InertiaStamped)
+MESSAGE_TYPE(geometry_msgs::msg::Point, geometry_msgs/msg/Point)
+MESSAGE_TYPE(geometry_msgs::msg::Point32, geometry_msgs/msg/Point32)
+MESSAGE_TYPE(geometry_msgs::msg::PointStamped, geometry_msgs/msg/PointStamped)
+MESSAGE_TYPE(geometry_msgs::msg::Polygon, geometry_msgs/msg/Polygon)
+// MESSAGE_TYPE(geometry_msgs::msg::PolygonInstance, geometry_msgs/msg/PolygonInstance)
+// MESSAGE_TYPE(geometry_msgs::msg::PolygonInstanceStamped, geometry_msgs/msg/PolygonInstanceStamped)
+MESSAGE_TYPE(geometry_msgs::msg::PolygonStamped, geometry_msgs/msg/PolygonStamped)
+MESSAGE_TYPE(geometry_msgs::msg::Pose, geometry_msgs/msg/Pose)
+// MESSAGE_TYPE(geometry_msgs::msg::Pose2D, geometry_msgs/msg/Pose2D)
+// MESSAGE_TYPE(geometry_msgs::msg::PoseArray, geometry_msgs/msg/PoseArray)
+MESSAGE_TYPE(geometry_msgs::msg::PoseStamped, geometry_msgs/msg/PoseStamped)
+MESSAGE_TYPE(geometry_msgs::msg::PoseWithCovariance, geometry_msgs/msg/PoseWithCovariance)
+MESSAGE_TYPE(geometry_msgs::msg::PoseWithCovarianceStamped, geometry_msgs/msg/PoseWithCovarianceStamped)
+MESSAGE_TYPE(geometry_msgs::msg::Quaternion, geometry_msgs/msg/Quaternion)
+MESSAGE_TYPE(geometry_msgs::msg::QuaternionStamped, geometry_msgs/msg/QuaternionStamped)
+MESSAGE_TYPE(geometry_msgs::msg::Transform, geometry_msgs/msg/Transform)
+MESSAGE_TYPE(geometry_msgs::msg::TransformStamped, geometry_msgs/msg/TransformStamped)
+// MESSAGE_TYPE(geometry_msgs::msg::Twist, geometry_msgs/msg/Twist)
+// MESSAGE_TYPE(geometry_msgs::msg::TwistStamped, geometry_msgs/msg/TwistStamped)
+// MESSAGE_TYPE(geometry_msgs::msg::TwistWithCovariance, geometry_msgs/msg/TwistWithCovariance)
+// MESSAGE_TYPE(geometry_msgs::msg::TwistWithCovarianceStamped, geometry_msgs/msg/TwistWithCovarianceStamped)
+MESSAGE_TYPE(geometry_msgs::msg::Vector3, geometry_msgs/msg/Vector3)
+MESSAGE_TYPE(geometry_msgs::msg::Vector3Stamped, geometry_msgs/msg/Vector3Stamped)
+// MESSAGE_TYPE(geometry_msgs::msg::VelocityStamped, geometry_msgs/msg/VelocityStamped)
+MESSAGE_TYPE(geometry_msgs::msg::Wrench, geometry_msgs/msg/Wrench)
+MESSAGE_TYPE(geometry_msgs::msg::WrenchStamped, geometry_msgs/msg/WrenchStamped)
 
-MESSAGE_TYPE(sensor_msgs::PointCloud2)
+MESSAGE_TYPE(sensor_msgs::msg::PointCloud2, sensor_msgs/msg/PointCloud2)
