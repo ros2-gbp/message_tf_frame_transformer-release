@@ -1,6 +1,12 @@
 name: industrial_ci
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   industrial_ci:
@@ -9,18 +15,14 @@ jobs:
     strategy:
       matrix:
         ROS_DISTRO:
-          - noetic
           - humble
-          - iron
           - jazzy
+          - kilted
           - rolling
         ROS_REPO:
-          - testing
           - main
     steps:
       - uses: actions/checkout@v3
       - uses: ros-industrial/industrial_ci@master
         with:
           config: ${{ toJSON(matrix) }}
-        env:
-          NOT_TEST_BUILD: true
