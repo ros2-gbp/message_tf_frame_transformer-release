@@ -1,0 +1,12 @@
+Source: ros-lyrical-message-tf-frame-transformer
+Section: misc
+Priority: optional
+Maintainer: Lennart Reiher <lennart.reiher@rwth-aachen.de>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake, ros-lyrical-geometry-msgs, ros-lyrical-rclcpp, ros-lyrical-sensor-msgs, ros-lyrical-tf2, ros-lyrical-tf2-geometry-msgs, ros-lyrical-tf2-ros, ros-lyrical-tf2-sensor-msgs, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/message_tf_frame_transformer/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-message-tf-frame-transformer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-geometry-msgs, ros-lyrical-rclcpp, ros-lyrical-sensor-msgs, ros-lyrical-tf2, ros-lyrical-tf2-geometry-msgs, ros-lyrical-tf2-ros, ros-lyrical-tf2-sensor-msgs, ros-lyrical-ros-workspace
+Description: Transforms messages of arbitrary type to a different frame using tf2::doTransform
