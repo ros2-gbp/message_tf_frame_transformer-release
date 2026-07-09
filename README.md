@@ -1,3 +1,26 @@
+## message_tf_frame_transformer (humble) - 1.1.3-2
+
+The packages in the `message_tf_frame_transformer` repository were released into the `humble` distro by running `/usr/local/bin/bloom-release --rosdistro humble --track humble message_tf_frame_transformer --override-release-repository-push-url git@github.com:ros2-gbp/message_tf_frame_transformer-release.git` on `Thu, 09 Jul 2026 14:38:25 -0000`
+
+The `message_tf_frame_transformer` package was released.
+
+Version of package(s) in repository `message_tf_frame_transformer`:
+
+- upstream repository: https://github.com/ika-rwth-aachen/message_tf_frame_transformer.git
+- release repository: https://github.com/ros2-gbp/message_tf_frame_transformer-release.git
+- rosdistro version: `1.1.3-1`
+- old version: `1.1.3-1`
+- new version: `1.1.3-2`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## message_tf_frame_transformer (rolling) - 1.1.3-1
 
 The packages in the `message_tf_frame_transformer` repository were released into the `rolling` distro by running `/usr/bin/bloom-release -y --no-web --ros-distro rolling --override-release-repository-push-url https://github.com/ros2-gbp/message_tf_frame_transformer-release.git --no-pull-request --debug message_tf_frame_transformer` on `Mon, 18 Aug 2025 10:10:10 -0000`
