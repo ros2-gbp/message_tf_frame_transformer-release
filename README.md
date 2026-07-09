@@ -1,3 +1,26 @@
+## message_tf_frame_transformer (kilted) - 1.1.3-2
+
+The packages in the `message_tf_frame_transformer` repository were released into the `kilted` distro by running `/usr/local/bin/bloom-release --rosdistro kilted --track kilted message_tf_frame_transformer --override-release-repository-push-url git@github.com:ros2-gbp/message_tf_frame_transformer-release.git` on `Thu, 09 Jul 2026 14:40:07 -0000`
+
+The `message_tf_frame_transformer` package was released.
+
+Version of package(s) in repository `message_tf_frame_transformer`:
+
+- upstream repository: https://github.com/ika-rwth-aachen/message_tf_frame_transformer.git
+- release repository: https://github.com/ros2-gbp/message_tf_frame_transformer-release.git
+- rosdistro version: `1.1.3-1`
+- old version: `1.1.3-1`
+- new version: `1.1.3-2`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## message_tf_frame_transformer (jazzy) - 1.1.3-2
 
 The packages in the `message_tf_frame_transformer` repository were released into the `jazzy` distro by running `/usr/local/bin/bloom-release --rosdistro jazzy --track jazzy message_tf_frame_transformer --override-release-repository-push-url git@github.com:ros2-gbp/message_tf_frame_transformer-release.git` on `Thu, 09 Jul 2026 14:39:23 -0000`
