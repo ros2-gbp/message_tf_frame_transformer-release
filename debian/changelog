@@ -1,0 +1,37 @@
+ros-rolling-message-tf-frame-transformer (1.1.3-3resolute) resolute; urgency=high
+
+  * Merge pull request #6 <https://github.com/ika-rwth-aachen/message_tf_frame_transformer/issues/6> from ika-rwth-aachen/codex/find-common-message-packages-on-ros-index
+    Remove perception_interfaces and planning_interfaces; add all geometry_msgs; improve CI
+  * Merge pull request #5 <https://github.com/ika-rwth-aachen/message_tf_frame_transformer/issues/5> from ika-rwth-aachen/codex/deprecate-ros-1-noetic-and-update-ros-2-support
+  * Merge branch 'main' into codex/deprecate-ros-1-noetic-and-update-ros-2-support
+  * Merge pull request #4 <https://github.com/ika-rwth-aachen/message_tf_frame_transformer/issues/4> from ika-rwth-aachen/add-ika-interfaces
+    Add interfaces "perception_interfaces" and "planning_interfaces"
+  * Contributors: Lennart Reiher
+
+ -- "Lennart Reiher" <lennart.reiher@rwth-aachen.de>  Sun, 17 Aug 2025 22:00:00 -0000
+
+ros-rolling-message-tf-frame-transformer (1.1.2-3resolute) resolute; urgency=high
+
+
+
+ -- "Lennart Reiher" <lennart.reiher@rwth-aachen.de>  Wed, 05 Jun 2024 22:00:00 -0000
+
+ros-rolling-message-tf-frame-transformer (1.1.1-3resolute) resolute; urgency=high
+
+  * Merge pull request #3 from clalancette/clalancette/fix-compile-error
+    Fix a compile error with modern rclcpp.
+  * Contributors: Lennart Reiher
+
+ -- "Lennart Reiher" <lennart.reiher@rwth-aachen.de>  Mon, 18 Mar 2024 23:00:00 -0000
+
+ros-rolling-message-tf-frame-transformer (1.1.0-3resolute) resolute; urgency=high
+
+  * integrate docker-ros
+  * add support for ros2 iron
+  * add remark for pointcloud2
+    closes #1
+  * Contributors: Lennart Reiher
+
+ -- "Lennart Reiher" <lennart.reiher@rwth-aachen.de>  Fri, 09 Jun 2023 22:00:00 -0000
+
+
