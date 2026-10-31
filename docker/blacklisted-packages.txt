@@ -1,4 +1,0 @@
-perception_msgs_rendering
-perception_msgs_rviz_plugins
-route_planning_msgs_rviz_plugins
-trajectory_planning_msgs_rviz_plugins
