@@ -5,14 +5,13 @@
   <img src="https://img.shields.io/github/license/ika-rwth-aachen/message_tf_frame_transformer"/>
   <a href="https://github.com/ika-rwth-aachen/message_tf_frame_transformer/actions/workflows/industrial_ci.yml"><img src="https://github.com/ika-rwth-aachen/message_tf_frame_transformer/actions/workflows/industrial_ci.yml/badge.svg"/></a>
   <a href="https://github.com/ika-rwth-aachen/message_tf_frame_transformer/actions/workflows/docker-ros.yml"><img src="https://github.com/ika-rwth-aachen/message_tf_frame_transformer/actions/workflows/docker-ros.yml/badge.svg"/></a>
-  <img src="https://img.shields.io/badge/ROS-humble|jazzy|kilted|rolling-293754"/>
+  <img src="https://img.shields.io/badge/ROS-humble|jazzy|kilted|lyrical|rolling-293754"/>
   <a href="https://github.com/ika-rwth-aachen/message_tf_frame_transformer"><img src="https://img.shields.io/github/stars/ika-rwth-aachen/message_tf_frame_transformer?style=social"/></a>
 </p>
 
 The *message_tf_frame_transformer* package provides a ROS node to transform messages of arbitrary type to a different coordinate frame. This can be helpful if you cannot or do not want to modify the source code of other ROS nodes that require your data to be valid in a specific coordinate frame. Simply launch the *message_tf_frame_transformer* node and transform arbitrary messages to a target coordinate frame.
 
 - [Installation](#installation)
-  - [docker-ros](#docker-ros)
 - [Usage](#usage)
 - [Supported Message Types](#supported-message-types)
 - [Nodes](#nodes)
@@ -27,7 +26,7 @@ The *message_tf_frame_transformer* package is released as an official ROS packag
 sudo apt install ros-$ROS_DISTRO-message-tf-frame-transformer
 ```
 
-If you would like to install *message_tf_frame_transformer* from source, simply clone this repository into your ROS workspace. All dependencies that are listed in the ROS [`package.xml`](./package.xml) can be installed using [*rosdep*](http://wiki.ros.org/rosdep).
+If you would like to install *message_tf_frame_transformer* from source, simply clone this repository into your ROS workspace. All dependencies that are listed in the ROS [`package.xml`](./message_tf_frame_transformer/package.xml) can be installed using [*rosdep*](http://wiki.ros.org/rosdep).
 
 ```bash
 # message_tf_frame_transformer$
@@ -49,6 +48,8 @@ docker run --rm ghcr.io/ika-rwth-aachen/message_tf_frame_transformer:latest # or
 ## Usage
 
 In order to transform messages on topic `$INPUT_TOPIC` to frame `$TARGET_FRAME_ID` and publish them to topic `$OUTPUT_TOPIC`, the *message_tf_frame_transformer* node can be started with the following topic remappings and parameter setting. Only the `target_frame_id` parameter is required. The `source_frame_id` parameter is only required for non-stamped messages without an [`std_msgs/Header`](https://docs.ros.org/en/api/std_msgs/html/msg/Header.html). The topics default to `~/input` and `~/transformed` in the node's private namespace.
+
+The optional parameter `transform_lookup_grace_period` specifies a maximum duration in milliseconds to wait for a transform to become available. If the transform is not available within this time, the message is dropped and an error message is emitted. This is useful for cases where the sensor pipeline is faster than the `/tf` pipeline. Because waiting for a transform stalls the reader, this mechanism is suitable to resolve small timing issues, not for buffering large numbers of messages. The default value is `0`. 
 
 ```bash
 ros2 run message_tf_frame_transformer message_tf_frame_transformer --ros-args \
@@ -104,9 +105,9 @@ The *message_tf_frame_transformer* package is able to support any ROS message ty
 
 Through application of preprocessor macros, adding support for a new ROS message type is as easy as adding only two lines of code. Note that the ROS message types have to integrate with [`tf2::doTransform`](http://wiki.ros.org/tf2/Tutorials/Transforming%20your%20own%20datatypes). Feel free to open a pull request to add support for more message types!
 
-1. [`message_types.hpp`](./include/message_tf_frame_transformer/message_types.hpp)
+1. [`message_types.hpp`](https://github.com/ika-rwth-aachen/message_tf_frame_transformer/blob/main/message_tf_frame_transformer/include/message_tf_frame_transformer/message_types.hpp)
    - include required message headers
-1. [`message_types.macro`](./include/message_tf_frame_transformer/message_types.macro)
+1. [`message_types.macro`](https://github.com/ika-rwth-aachen/message_tf_frame_transformer/blob/main/message_tf_frame_transformer/include/message_tf_frame_transformer/message_types.macro)
    - define information about the new message type by calling the `MESSAGE_TYPE` macro
       - `TYPE`: ROS message type (e.g. `geometry_msgs::msg::PointStamped`)
       - `NAME`: ROS message type name (e.g. `geometry_msgs/msg/PointStamped`)
@@ -146,6 +147,7 @@ Through application of preprocessor macros, adding support for a new ROS message
 | --- | --- | --- |
 | `~/target_frame_id` | `string` | target frame ID |
 | `~/source_frame_id` | `string` | source frame ID (optional; if message has no [`std_msgs/Header`](https://docs.ros.org/en/api/std_msgs/html/msg/Header.html)) |
+| `~/transform_lookup_grace_period` | `int`    | Grace period in milliseconds to wait for a frame transform to become available  (optional)                                   |
 
 
 ## Acknowledgements
